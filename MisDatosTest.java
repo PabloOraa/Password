@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DatosPersonales;
 
 import java.text.SimpleDateFormat;
@@ -11,7 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * @author Pablo Oraa
+ * 
+ * Nota: Para poder utilizar los acentos del teclado espa�ol, cambiar en las propiedades del proyecto de UTF-8 a ISO-8859-1
+ * @author pabli
  */
 public class MisDatosTest 
 {
@@ -256,7 +253,7 @@ public class MisDatosTest
     public void testComprobarPrimerApellidoCadenaLargaNoTodoLetras()
     {
         System.out.println("comprobarNombre");
-        String primerApellido = "Jimenez+`·";
+        String primerApellido = "Jimenez23";
         MisDatos instance = new MisDatos();
         boolean expResult = false;
         boolean result = instance.comprobarPrimerApellido(primerApellido);
@@ -268,7 +265,7 @@ public class MisDatosTest
     public void testComprobarPrimerApellidoNoLetras()
     {
         System.out.println("comprobarNombre");
-        String primerApellido = "·$212´´3";
+        String primerApellido = "Jimenez2";
         MisDatos instance = new MisDatos();
         boolean expResult = false;
         boolean result = instance.comprobarPrimerApellido(primerApellido);
@@ -355,7 +352,7 @@ public class MisDatosTest
     public void testComprobarSegundoApellidoCadenaLargaNoTodoLetras()
     {
         System.out.println("comprobarNombre");
-        String segundoApellido = "Jimenez+`·";
+        String segundoApellido = "Jimenez2";
         MisDatos instance = new MisDatos();
         boolean expResult = false;
         boolean result = instance.comprobarSegundoApellido(segundoApellido);
@@ -367,7 +364,7 @@ public class MisDatosTest
     public void testComprobarSegundoApellidoNoLetras()
     {
         System.out.println("comprobarNombre");
-        String segundoApellido = "·$212´´3";
+        String segundoApellido = "12312";
         MisDatos instance = new MisDatos();
         boolean expResult = false;
         boolean result = instance.comprobarSegundoApellido(segundoApellido);
@@ -526,8 +523,8 @@ public class MisDatosTest
         // TODO review the generated test code and remove the default call to fail.
     }
     
-    @Test //Fecha Incorrecta mañana
-    public void testComprobarFechaMañana() 
+    @Test //Fecha Incorrecta ma�ana
+    public void testComprobarFechaIMa�ana() 
     {
         System.out.println("comprobarFecha");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -542,7 +539,7 @@ public class MisDatosTest
     }
     
     @Test //Fecha Incorrecta Posterior a hoy
-    public void testComprobarFechaAñosPosteriores() 
+    public void testComprobarFechaIPosteriores() 
     {
         System.out.println("comprobarFecha");
         String fecha = "31/12/2024";

@@ -5,70 +5,71 @@ import java.text.DateFormat;
 import java.util.Random;
 
 /**
- * Clase contrasena utilizada para generar contraseÃ±as de forma aleatoria.
- * Para ello tenemos tres mÃ©todos, uno mecÃ¡nico usando dados y una serie de filas, uno algorÃ­tmico que utiliza Secure Random
+ * Clase contrasena utilizada para generar contraseñas de forma aleatoria.
+ * Para ello tenemos tres métodos, uno mecánico usando dados y una serie de filas, uno algorítmico que utiliza Secure Random
  * y uno propio con una serie de reglas.
  * @author Pablo Oraa
+ * @version 1.4 02/12/2018
  */
 public final class Contrasena 
 {
     /**
-     * Variable de clase rand - GenerarÃ¡ numeros aleatorios para la moneda (entre 0 y 1), para obtener un simbolo aleatorio en el tercer metodo
-     * o para la obtenciÃ³n de la fila y columna del primer metodo.
+     * Variable de clase rand - Generará numeros aleatorios para la moneda (entre 0 y 1), para obtener un símbolo aleatorio en el tercer método
+     * o para la obtención de la fila y columna del primer método.
      */
     Random rand = new Random();
     /**
-     * Variable de clase contra - Cadena de texto donde se guardarÃ¡ la cadena generada por alguno de los tres metodos posibles.
+     * Variable de clase contra - Cadena de texto donde se guardará la cadena generada por alguno de los tres metodos posibles.
      */
     private String contra;
     /**
-     * Variable de clase seguridad - Cadena de texto que indica cuan segura es la contraseÃ±a en funciÃ³n de MayÃºsculas, MinÃºsuclas, NÃºmeros y Simbolos.
+     * Variable de clase seguridad - Cadena de texto que indica cuan segura es la contraseña en función de Mayúsculas, Minúsuclas, Números y Símbolos.
      * Puede ser Poco Segura, Segura o Muy Segura.
      */
     private String seguridad;
     /**
-     * Variable de clase color - Cadena de texto que indica el color asociado a la seguridad de la contraseÃ±a, siendo rojo para Poco Segura, Amarillo para Segura y verde para Muy Segura.
+     * Variable de clase color - Cadena de texto que indica el color asociado a la seguridad de la contraseña, siendo rojo para Poco Segura, Amarillo para Segura y verde para Muy Segura.
      */
     private String color;
     /**
-     * Variable de clase cadenaSimbolos - Cadena de texto con todos los sÃ­mnolos que puede tener nuestra contraseÃ±a, es decir !"Â·$%&/()=.
+     * Variable de clase cadenaSimbolos - Cadena de texto con todos los símbolos que puede tener nuestra contraseña, es decir !"·$%&/()=.
      */
-    private final String cadenaSimbolos="!\"Â·$%&/()=";
+    private final String cadenaSimbolos="!\"·$%&/()=";
     /**
-     * Variable de clase primeraFila - Cadena de texto que representa la primera fila de caracteres segÃºn la tabla aportada, es decir, abcdef.
+     * Variable de clase primeraFila - Cadena de texto que representa la primera fila de caracteres según la tabla aportada, es decir, abcdef.
      */
     private final String primeraFila="abcdef";
     /**
-     * Variable de clase segundaFila - Cadena de texto que representa la segunda fila de caracteres segÃºn la tabla aportada, es decir, ghijkl.
+     * Variable de clase segundaFila - Cadena de texto que representa la segunda fila de caracteres según la tabla aportada, es decir, ghijkl.
      */
     private final String segundaFila="ghijkl";
     /**
-     * Variable de clase terceraFila - Cadena de texto que representa la tercera fila de caracteres segÃºn la tabla aportada, es decir, mnopqr.
+     * Variable de clase terceraFila - Cadena de texto que representa la tercera fila de caracteres según la tabla aportada, es decir, mnopqr.
      */
     private final String terceraFila="mnopqr";
     /**
-     * Variable de clase cuartaFila - Cadena de texto que representa la cuarta fila de caracteres segÃºn la tabla aportada, es decir, stuvwx.
+     * Variable de clase cuartaFila - Cadena de texto que representa la cuarta fila de caracteres según la tabla aportada, es decir, stuvwx.
      */
     private final String cuartaFila="stuvwx";
     /**
-     * Variable de clase quintaFila - Cadena de texto que representa la quinta fila de caracteres segÃºn la tabla aportada, es decir, yz0123.
+     * Variable de clase quintaFila - Cadena de texto que representa la quinta fila de caracteres según la tabla aportada, es decir, yz0123.
      */
     private final String quintaFila="yz0123";
     /**
-     * Variable de clase sextaFila - Cadena de texto que representa la sexta fila de caracteres segÃºn la tabla aportada, es decir, 456789.
+     * Variable de clase sextaFila - Cadena de texto que representa la sexta fila de caracteres según la tabla aportada, es decir, 456789.
      */
     private final String sextaFila="456789";
     /**
-     * Variable de clase listaCompleta - Cadena de texto que representa la lista completa de caracteres permitidos segÃºn la tabla aportada, es decir, de la a a la z en minusculas y en mayusculas, los numeros y los simbolos.
+     * Variable de clase listaCompleta - Cadena de texto que representa la lista completa de caracteres permitidos según la tabla aportada, es decir, de la a a la z en minúsculas y en mayúsculas, los numeros y los simbolos.
      */
     private final String listaCompleta = primeraFila + segundaFila + terceraFila + cuartaFila + quintaFila + sextaFila
                         + primeraFila.toUpperCase() + segundaFila.toUpperCase() 
                         + terceraFila.toUpperCase() + cuartaFila.toUpperCase() + "YZ" + cadenaSimbolos;
     
     /**
-     * Constructor de la clase contraseÃ±a que utiliza el metodo propio para la creaciÃ³n de la ocntraseÃ±a.
-     * Estos podrÃ¡n ser de 4 a 8 dÃ­gitos, que se crearÃ¡n aleatoriamente en el momento que se use el metodo.
-     * @param usuario Representa el usuario del que se va a generar la contraseÃ±a, por si es necesario.
+     * Constructor de la clase contraseña que utiliza el metodo propio para la creación de la contraseña.
+     * <br>Estos podrán ser de 4 a 8 dígitos, que se crearán aleatoriamente en el momento que se use el método.
+     * @param usuario Representa el usuario del que se va a generar la contraseña, por si es necesario.
      */
     public Contrasena(MisDatos usuario)
     {
@@ -77,10 +78,10 @@ public final class Contrasena
     }
     
     /**
-     * Constructor de la clase contraseÃ±a que utiliza uno de los metodos diferentes en funciÃ³n del parametro.
-     * Estos podrÃ¡n ser de 4 a 8 dÃ­gitos, que se crearÃ¡n aleatoriamente en el momento que se use el metodo.
-     * @param metodo Representa cada uno de losÂ´mÃ©todos de generacion aleatoria de contraseÃ±as. 
-     * 1 para el Metodo MecÃ¡nico, 2 para el Metodo LogarÃ­tmico y 3 para el Metodo propio.
+     * Constructor de la clase contraseña que utiliza uno de los metodos diferentes en función del parametro.
+     * <br>Estos podrán ser de 4 a 8 dígitos, que se crearán aleatoriamente en el momento que se use el metodo.
+     * @param metodo Representa cada uno de los métodos de generacion aleatoria de contraseñas. 
+     * 1 para el Metodo Mecánico, 2 para el Metodo Logararítmico.
      */
     public Contrasena(int metodo)
     {
@@ -98,7 +99,7 @@ public final class Contrasena
     }
     
     /**
-     * setContraseÃ±a guarda la contraseÃ±a que se le pasa por parametro y la guarda en la variable contra.
+     * setPassword guarda la contraseña que se le pasa por parametro y la guarda en la variable contra.
      * @param cadena que ha generado el metodo aleatorio.
      */
     public void setPassword(String cadena)
@@ -107,10 +108,10 @@ public final class Contrasena
     }
     
     /**
-     * setContraseÃ±a guarda la contraseÃ±a que se le pasa por parametro y la guarda para que estÃ© con todos los datos del usuario.
-     * Si la contraseÃ±a tiene entre 4 y 6 carÃ¡cteres, la contraseÃ±a serÃ¡ Poco Segura.
-     * Si la contraseÃ±a tiene mÃ¡s de 6 carÃ¡cteres pero no tiene sÃ­mbolos, letras mayÃºsculas, letras minÃºsculas o nÃºmeros, serÃ¡ Segura.
-     * Si la contraseÃ±a tiene mÃ¡s de 6 carÃ¡cteres y tiene sÃ­mbolos, letras mayÃºsculas, letras minÃºsculas y nÃºmeros, serÃ¡ Muy Segura.
+     * setSeguridad obtiene la seguridad asociada a la contraseña generada por uno de los metodos, y le asigna el color una vez sabemos la seguridad.
+     * <br>Si la contraseña tiene entre 4 y 6 carácteres, la contraseña será Poco Segura.
+     * <br>Si la contraseña tiene más de 6 carácteres pero no tiene símbolos, letras mayúsculas, letras minúsculas o números, será Segura.
+     * <br>Si la contraseña tiene más de 6 carácteres y tiene símbolos, letras mayúsculas, letras minúsculas y números, será Muy Segura.
      * @param contra se ha generado con alguno de los metodos.
      */
     public void setSeguridad(String contra)
@@ -118,24 +119,19 @@ public final class Contrasena
         if(contra.length() < 7)
             seguridad = "Poco Segura";
         else
-        {
-            boolean simbolo = comprobarSimbolo(contra);
-            boolean letraMayus = comprobarLetraMayuscula(contra);
-            boolean letraMinus = comprobarLetraMinuscula(contra);
-            boolean numero = comprobarNumero(contra);
-            if(simbolo && letraMayus && letraMinus && numero)
+            if(comprobarSimbolo(contra) && comprobarLetraMayuscula(contra) 
+                    && comprobarLetraMinuscula(contra) && comprobarNumero(contra))
                 seguridad = "Muy Segura";
             else
                 seguridad = "Segura";
-        }
         setColor();
     }
     
     /**
-     * setColor guarda el color que se le asigna a la seguridad que tiene la contraseÃ±a.
-     * Si la contraseÃ±a es Poco Segura, tendrÃ¡ el color rojo.
-     * Si la contraseÃ±a es Segura, tendrÃ¡ el color amarillo.
-     * Si la contraseÃ±a es Muy Segura, tendrÃ¡ el color verde.
+     * setColor guarda el color que se le asigna a la seguridad que tiene la contraseña.
+     * <br>Si la contraseña es Poco Segura, tendrá el color rojo.
+     * <br>Si la contraseña es Segura, tendrá el color amarillo.
+     * <br>Si la contraseña es Muy Segura, tendrá el color verde.
      */
     private void setColor()
     {
@@ -153,9 +149,9 @@ public final class Contrasena
     }
     
     /**
-     * El metodo comprobarSimbolo sirve para ver la contraseÃ±a creada dispone de un simbolo en ella.
-     * Para ello, recorre la contraseÃ±a creada y compara con cada uno de los simbolos que estÃ¡n permitidos.
-     * @param contra ContraseÃ±a creada por uno de los metodos y en la que se va a comprobar si hay un simbolo.
+     * El metodo comprobarSimbolo sirve para ver la contraseña creada dispone de un símbolo en ella.
+     * <br>Para ello, recorre la contraseña creada y compara con cada uno de los simbolos que están permitidos.
+     * @param contra Contraseña creada por uno de los metodos y en la que se va a comprobar si hay un simbolo.
      * @return true si hay un simbolo, o false si no lo hay.
      */
     private boolean comprobarSimbolo(String contra)
@@ -169,24 +165,24 @@ public final class Contrasena
     }
     
     /**
-     * El metodo comprobarLetraMayuscula sirve para ver la contraseÃ±a creada dispone de una letra mayuscula en ella.
-     * Para ello, recorre la contraseÃ±a creada y comprueba si hay una letra mayÃºscula en la cadena.
-     * @param contra ContraseÃ±a creada por uno de los metodos y en la que se va a comprobar si hay una letra mayuscula.
-     * @return true si hay una letra mayuscula, o false si no lo hay.
+     * El metodo comprobarLetraMayuscula sirve para ver la contraseña creada dispone de una letra mayuscula en ella.
+     * <br>Para ello, recorre la contraseña creada y comprueba si hay una letra mayúscula en la cadena.
+     * @param contra Contraseña creada por uno de los metodos y en la que se va a comprobar si hay una letra mayúscula.
+     * @return true si hay una letra mayúscula, o false si no lo hay.
      */
     private boolean comprobarLetraMayuscula(String contra)
     {
-            for (int i = 0; i < contra.length(); i++) 
-                if(Character.isUpperCase(contra.charAt(i)))
-                    return true;
-            return false;
+        for (int i = 0; i < contra.length(); i++) 
+            if(Character.isUpperCase(contra.charAt(i)))
+                return true;
+        return false;
     }
     
     /**
-     * El metodo comprobarLetraMinuscula sirve para ver la contraseÃ±a creada dispone de una letra minÃºscula en ella.
-     * Para ello, recorre la contraseÃ±a creada y comprueba si hay una letra minÃºscula en la cadena.
-     * @param contra ContraseÃ±a creada por uno de los metodos y en la que se va a comprobar si hay una letra minÃºscula.
-     * @return true si hay una letra minÃºscula, o false si no lo hay.
+     * El metodo comprobarLetraMinuscula sirve para ver la contraseña creada dispone de una letra minúscula en ella.
+     * <br>Para ello, recorre la contraseña creada y comprueba si hay una letra minúscula en la cadena.
+     * @param contra Contraseña creada por uno de los metodos y en la que se va a comprobar si hay una letra minúscula.
+     * @return true si hay una letra minúscula, o false si no lo hay.
      */
     private boolean comprobarLetraMinuscula(String contra)
     {
@@ -197,9 +193,9 @@ public final class Contrasena
     }
     
     /**
-     * El metodo comprobarNumero sirve para ver la contraseÃ±a creada dispone de un numero en ella.
-     * Para ello, recorre la contraseÃ±a creada y compara con cada uno de los numero que estÃ¡n permitidos.
-     * @param contra ContraseÃ±a creada por uno de los metodos y en la que se va a comprobar si hay un numero.
+     * El metodo comprobarNumero sirve para ver la contraseña creada dispone de un numero en ella.
+     * <br>Para ello, recorre la contraseña creada y compara con cada uno de los numero que están permitidos.
+     * @param contra Contraseña creada por uno de los metodos y en la que se va a comprobar si hay un numero.
      * @return true si hay un numero, o false si no lo hay.
      */
     private boolean comprobarNumero(String contra)
@@ -211,8 +207,8 @@ public final class Contrasena
     }
     
     /**
-     * El metodo getSeguridad devuelve la seguridad de una contraseÃ±a creada con anterioridad.
-     * @return La cadena Poco Segura, Segura o Muy Segura en funciÃ³n del valor en la variable seguridad.
+     * El metodo getSeguridad devuelve la seguridad de una contraseña creada con anterioridad.
+     * @return La cadena Poco Segura, Segura o Muy Segura en función del valor en la variable seguridad.
      */
     public String getSeguridad()
     {
@@ -220,8 +216,8 @@ public final class Contrasena
     }
     
     /** 
-     * El metodo getPassword devuelve la contraseÃ±a creada con anterioridad y guardada en la variable contra.
-     * @return La contraseÃ±a creada por uno de los metodos disponibles.
+     * El metodo getPassword devuelve la contraseña creada con anterioridad y guardada en la variable contra.
+     * @return La contraseña creada por uno de los metodos disponibles.
      */
     public String getPassword()
     {
@@ -229,8 +225,8 @@ public final class Contrasena
     }
     
     /**
-     * El metodo getColor devuelve el color asociado a la seguridad de una contraseÃ±a creada con anterioridad.
-     * @return El color rojo, verde y amarillo en funciÃ³n del valor en la variable color.
+     * El metodo getColor devuelve el color asociado a la seguridad de una contraseña creada con anterioridad.
+     * @return El color rojo, verde y amarillo en función del valor en la variable color.
      */
     public String getColor()
     {
@@ -239,12 +235,12 @@ public final class Contrasena
     
     //Primer Metodo 
     /**
-     * El metodo metodoMecanico genera una contraseÃ±a aleatoria utilizando una serie de filas y columnas aleatorias elegidas aleatoriamente.
-     * abcdefghijklmnopqrstuvwxyz0123456789 es cada uno de los carÃ¡cteres posibles. A mayores, se lanza una moneda, en el que si es cruz, se
-     * cogerÃ¡ la letra minÃºscula o el nÃºmero. Por el contrario, si es cara, se coge la letra MayÃºscula o el simbolo asociado a cada nÃºmero en
-     * el teclado espaÃ±ol.
-     * @param numeroCaracteres NÃºmero de carÃ¡cteres que debe tener la contraseÃ±a que se va a generar.
-     * @return La contraseÃ±a generada.
+     * El metodo metodoMecanico genera una contraseña aleatoria utilizando una serie de filas y columnas aleatorias elegidas aleatoriamente.
+     * abcdefghijklmnopqrstuvwxyz0123456789 es cada uno de los carácteres posibles. A mayores, se lanza una moneda, en el que si es cruz, se
+     * cogerá la letra minúscula o el número. Por el contrario, si es cara, se coge la letra Mayúscula o el simbolo asociado a cada número en
+     * el teclado español.
+     * @param numeroCaracteres Número de carácteres que debe tener la contraseña que se va a generar.
+     * @return La contraseña generada.
      */
     public String metodoMecanico(int numeroCaracteres)
     {        
@@ -255,7 +251,7 @@ public final class Contrasena
             boolean caracterNumerico = false;
             boolean ladoMoneda;
             ladoMoneda = rand.nextInt(2) == 1; //True representa Cara, es decir, simbolos y mayusculas
-            //False representa Cruz, es decir, numeros y minusculas
+                                               //False representa Cruz, es decir, numeros y minusculas
             
             int numero = rand.nextInt(6)+1;
             cadenaUsar = elegirCadena(numero);
@@ -274,13 +270,13 @@ public final class Contrasena
             
         }//Fin del bucle
         return contrasena;
-    }//Fin del metodo mecÃ¡nico
+    }//Fin del metodo mecánico
     
     /**
-     * El metodo elegirCadena utiliza la posiciÃ³n que se le pasa por parÃ¡metro para asignar.
-     * una de las cadenas que pueden contener un carÃ¡cter de la contraseÃ±a.
-     * @param posicion PosiciÃ³n obtenida ya sea por aleatoriedad o por SecureRandom que indica el nÃºmero de cadena a usar.
-     * @return La cadena que se va a utilizar para saber el carÃ¡cter de la contraseÃ±a.
+     * El metodo elegirCadena utiliza la posición que se le pasa por parámetro para asignar.
+     * una de las cadenas que pueden contener un carácter de la contraseña.
+     * @param posicion Posición obtenida ya sea por aleatoriedad o por SecureRandom que indica el número de cadena a usar.
+     * @return La cadena que se va a utilizar para saber el carácter de la contraseña.
      */
     private String elegirCadena(int posicion)
     {
@@ -310,10 +306,10 @@ public final class Contrasena
     
     //Segundo metodo
     /**
-     * El metodo metodoLogaritmico genera una contraseÃ±a utilizando la clase SecureRandom para generar una serie de numero aleatorios
-     * entre 0 y 71 que indicarÃ¡ la posiciÃ³n sobre la que tiene que coger el caracter de una cadena con todos los carÃ¡cteres posibles.
-     * @param numeroCaracteres NÃºmero de carÃ¡cteres que debe tener la contraseÃ±a que se va a generar.
-     * @return La contraseÃ±a generada.
+     * El metodo metodoLogaritmico genera una contraseña utilizando la clase SecureRandom para generar una serie de números aleatorios
+     * entre 0 y 71 que indicará la posición sobre la que tiene que coger el caracter de una cadena con todos los carácteres posibles.
+     * @param numeroCaracteres Número de carácteres que debe tener la contraseña que se va a generar.
+     * @return La contraseña generada.
      */
     public String metodoLogaritmico(int numeroCaracteres)
     {
@@ -326,9 +322,9 @@ public final class Contrasena
 
     /**
      * El metodo simboloUsar identifica el simbolo asociado al numero que se le pasa. 
-     * El simbolo asociado es aquel que podemos encontrar encima de los nÃºmeros en el teclado espaÃ±ol de un ordenador.
-     * @param numero Indica el numero del que se quiere saber el simbolo correspondiente.
-     * @return El simbolo asociado.
+     * <br>El simbolo asociado es aquel que podemos encontrar encima de los números en el teclado español de un ordenador.
+     * @param numero Indica el numero del que se quiere saber el símbolo correspondiente.
+     * @return El símbolo asociado.
      */
     private char simboloUsar(int numero)
     {
@@ -345,7 +341,7 @@ public final class Contrasena
                 break;
             case 3:
             case '3':
-                Simbolo = 'Â·';
+                Simbolo = '·';
                 break;
             case 4:
             case '4':
@@ -381,16 +377,16 @@ public final class Contrasena
     
     //Tercer metodo
     /**
-     * El metodo tercerMetodo genera la contraseÃ±a utilizando la idea aportada en el enunciado de la prÃ¡ctica, en funciÃ³n del numero de caracteres.
-     * 1.  Primera letra del nombre en mayÃºsculas. 
-     * 2.  Ãšltima letra del primer apellido en minÃºsculas. 
-     * 3,4.  Dos Ãºltimas cifras del DNI. 
-     * 5.  Letra de dÃ­gito de control del DNI en mayÃºsculas. Ã‰sta se generarÃ¡ automÃ¡ticamente a partir del nÂº de DNI usando el algoritmo mÃ³dulo 23. 
-     * 6,7.  Dos Ãºltimas cifras del aÃ±o de nacimiento. 
-     * 8.  SÃ­mbolo aleatorio de entre los que aparecen en un teclado estÃ¡ndar encima de los nÃºmeros (0-9). 
+     * El metodo tercerMetodo genera la contraseña utilizando la idea aportada en el enunciado de la práctica, en función del numero de caracteres.
+     * <br>1.  Primera letra del nombre en mayúsculas. 
+     * <br>2. Última letra del primer apellido en minúsculas. 
+     * <br>3,4.  Dos Últimas cifras del DNI. 
+     * <br>5.  Letra de dígito de control del DNI en mayúsculas. Ésta se generará automáticamente a partir del nº de DNI usando el algoritmo módulo 23. 
+     * <br>6,7.  Dos últimas cifras del año de nacimiento. 
+     * <br>8.  Símbolo aleatorio de entre los que aparecen en un teclado estñandar encima de los números (0-9). 
      * @param usuario Usuario que se ha creado y del que tenemos los datos de Nombre, Primer Apellido, Segundo Apellido, Fecha de Nacimiento y numero de DNI.
-     * @param numeroCaracteres Longitud que va a tener la contraseÃ±a generada.
-     * @return Cadena con la contraseÃ±a generada utilizando las reglas anteriores.
+     * @param numeroCaracteres Longitud que va a tener la contraseña generada.
+     * @return Cadena con la contraseña generada utilizando las reglas anteriores.
      */
     public String tercerMetodo(MisDatos usuario, int numeroCaracteres)
     {
@@ -416,4 +412,15 @@ public final class Contrasena
         }//Fin del if de 5
         return contrasena;
     }//Fin del tercer metodo
+    
+    /*
+    * (non-Javadoc)
+    * @see java.lang.Object#toString()
+    */
+    @Override
+    public String toString()
+    {
+        return "Contra = " + contra + "\nSeguridad = " + seguridad 
+                + "\nColor = " + color;
+    }
 }// Fin de la clase

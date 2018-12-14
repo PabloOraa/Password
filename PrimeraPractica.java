@@ -4,11 +4,6 @@ import DatosPersonales.Contrasena;
 import DatosPersonales.MisDatos;
 import java.util.Scanner;
 
-/**
- * Clase PrimeraPractica en la que se va a encontrar la interfaz de la aplicaci√≥n, con la petici√≥n de los datos para generar al usuario.
- * @author Pablo Oraa
- * @version 1.3 28/11/2018
- */
 public class PrimeraPractica 
 {
     public static void main(String[] args) 
@@ -16,24 +11,31 @@ public class PrimeraPractica
         MisDatos Prueba = new MisDatos();
         Scanner sc = new Scanner(System.in);
         boolean correcto;
+        String nombre, apellido, DNI, fechaNac;
         
         //Pedimos datos al usuario
         do
         {
             correcto = false;
             System.out.print("Introduce tu nombre: ");
-            Prueba.setNombre(sc.nextLine());
-            if(Prueba.comprobarNombre(Prueba.getNombre()))
+            nombre = sc.next();
+            if(Prueba.comprobarNombre(nombre))
+            {
+                Prueba.setNombre(nombre);
                 correcto = true;
+            }
         }while(!correcto);
         
         do
         {
             correcto = false;
             System.out.print("Introduce tu primer apellido: ");
-            Prueba.setPrimerApellido(sc.nextLine());
-            if(Prueba.comprobarPrimerApellido(Prueba.getPrimerApellido()))
+            apellido = sc.next();
+            if(Prueba.comprobarPrimerApellido(apellido))
+            {
+                Prueba.setPrimerApellido(apellido);
                 correcto = true;
+            }
         }while(!correcto);
         
         do
@@ -41,16 +43,19 @@ public class PrimeraPractica
             correcto = false;
             System.out.print("Introduce tu segundo apellido "
                     + "(Si no tienes, introduce el primero de nuevo): ");
-            Prueba.setSegundoApellido(sc.nextLine());
-            if(Prueba.comprobarSegundoApellido(Prueba.getSegundoApellido()))
+            apellido = sc.next();
+            if(Prueba.comprobarSegundoApellido(apellido))
+            {
+                Prueba.setSegundoApellido(apellido);
                 correcto = true;
+            }
         }while(!correcto);
         
         do
         {
             correcto = false;
             System.out.print("Introduce tu DNI: ");
-            String DNI = sc.next();
+            DNI = sc.next();
             if(Prueba.comprobarDNI(DNI))
             {
                 Prueba.setDNI(DNI);
@@ -62,17 +67,17 @@ public class PrimeraPractica
         {
             correcto = false;
             System.out.print("Introduce tu fecha de nacimieto en formato dd/mm/aaaa: ");
-            String fechaNac = sc.next();
+            fechaNac = sc.next();
             if(Prueba.comprobarFecha(fechaNac))
                 correcto = true;
         }while(!correcto);
         
-        //Creamos las contrase√±as con cada uno de los m√©todos
+        //Creamos las contraseÒas con cada uno de los mÈtodos
         Contrasena contr = new Contrasena(1);
         Contrasena contr2 = new Contrasena(2);
         Contrasena contr3 = new Contrasena(Prueba);
         
-        //Le mostramos las contrase√±as al usuario
+        //Mostramos las contraseÒas al usuario
         System.out.println("La primera contrasena es " + contr.getPassword() 
                             + " que es " + contr.getColor() + contr.getSeguridad());
         System.out.print("\033[30m");
@@ -83,7 +88,7 @@ public class PrimeraPractica
                             + " que es " + contr3.getColor() + contr3.getSeguridad());
         System.out.print("\033[30m");
         
-        //El usuario elige una de las contrase√±as, que ser√° la que se le asigne a su usuario.
+        //El usuario elige una de las contraseÒas, que ser· la que se le asigne a su usuario.
         System.out.print("Elige una de las tres contrasenas: ");
         switch(Integer.parseInt(sc.next()))
         {

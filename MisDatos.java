@@ -5,9 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Clase Mis Datos ser√° utilizada para guardar el nombre, apellidos, dni, fecha de nacimiento
+ * Clase Mis Datos ser· utilizada para guardar el nombre, apellidos, dni, fecha de nacimiento
  * y datos de usuario que vamos a tener de un usuario.
  * @author Pablo Oraa
+ * @version 1.4 02/12/2018
  */
 public class MisDatos 
 {
@@ -36,7 +37,7 @@ public class MisDatos
      */
     private String nombreUsuario;
     /**
-     * Variable de clase contrasena - Cadena de texto que representa la contrase√±a de un usuario elegida entre las creadas por uno de los m√©todos.
+     * Variable de clase contrasena - Cadena de texto que representa la contraseÒa de un usuario elegida entre las creadas por uno de los mÈtodos.
      */
     private String contrasena;
     
@@ -50,7 +51,7 @@ public class MisDatos
 
     /**
      * setNombre permite guardar en el objeto creado el nombre del usuario que estamos creando.
-     * @param nombre Nombre que ha introducido el usuario y que indica el nombre que tiene. Minimo debe tener 3 caracteres.
+     * @param nombre Nombre que ha introducido el usuario y que indica el nombre que tiene. Minimo debe tener 3 car·cteres.
      */
     public void setNombre(String nombre)
     {
@@ -59,7 +60,7 @@ public class MisDatos
     
     /**
      * setPrimeroApellido permite guardar en el objeto creado el primero apellido del usuario que estamos creando.
-     * @param Apellido que ha introducido el usuario y que indica el primero apellido que tiene. Minimo debe tener 2 caracteres.
+     * @param Apellido que ha introducido el usuario y que indica el primero apellido que tiene. Minimo debe tener 2 car·cteres.
      */
     public void setPrimerApellido(String Apellido)
     {
@@ -68,7 +69,7 @@ public class MisDatos
     
     /**
      * setSegundoApellido permite guardar en el objeto creado el segundo apellido del usuario que estamos creando.
-     * @param Apellido que ha introducido el usuario y que indica el segundo Apellido que tiene. Minimo debe tener 2 caracteres.
+     * @param Apellido que ha introducido el usuario y que indica el segundo Apellido que tiene. Minimo debe tener 2 car·cteres.
      */
     public void setSegundoApellido(String Apellido)
     {
@@ -78,7 +79,7 @@ public class MisDatos
     
     /**
      * setDNI permite guardar en el objeto creado el DNI del usuario que estamos creando.
-     * Si son 8 d√≠gitos calcular√° la letra asociada, y si no directamente lo asigna
+     * <br>Si son 8 dÌgitos calcular· la letra asociada, y si no directamente lo asigna
      * @param DNI que ha introducido el usuario y que indica los 8 digitos (u 8 digitos + letra) del DNI que tiene.
      */
     public void setDNI(String DNI)
@@ -90,7 +91,7 @@ public class MisDatos
     
     /**
      * setFechaNacimiento permite guardar en el objeto creado la fecha de nacimiento del usuario que estamos creando.
-     * @param fechaNac que ha introducido el usuario y que indica el dia/mes/a√±o de nacimiento. Est√° en formato dd/MM/yyyy.
+     * @param fechaNac que ha introducido el usuario y que indica el dia/mes/aÒo de nacimiento. Est· en formato dd/MM/yyyy.
      */
     public void setFechaNacimiento(Date fechaNac)
     {
@@ -99,10 +100,11 @@ public class MisDatos
     
     /**
      * setNombreUsuario crea el nombre de usuario asociado al usuario utilizando el nombre, primer apellido y segundo apellido.
-     * Para ello, toma las dos primeras letras del segundo Apellido, a continuaci√≥n coge las dos primeras del primer Apellido y por √∫ltimo coge las tres primeras letras del nombre. 
+     * <br>Para ello, toma las dos primeras letras del segundo Apellido, a continuaciÛn coge las dos primeras del primer Apellido y por ⁄ltimo coge las tres primeras letras del nombre. 
      */
     private void setNombreUsuario()
     {
+        nombreUsuario = "";
         for (int i = 0, pos = 0; i < 7; i++) 
         {
             if(i < 2)
@@ -121,7 +123,7 @@ public class MisDatos
     }
     
     /**
-     * setContrase√±a guarda la contrase√±a que se le pasa por parametro y la guarda para que est√© con todos los datos del usuario.
+     * setContraseÒa guarda la contraseÒa que se le pasa por parametro y la guarda para que estÈ con todos los datos del usuario.
      * @param contrasena que el usuario ha decidido tener el usuario.
      */
     public void setContrasena(String contrasena)
@@ -185,7 +187,7 @@ public class MisDatos
     
     /**
      * El metodo getCOntrasena coge el atributo contrasena y lo devuelve al metodo que lo ha llamado.
-     * @return La contrase√±a que tiene el usuario registrado de los datos que ha introducido con anterioridad.
+     * @return La contraseÒa que tiene el usuario registrado de los datos que ha introducido con anterioridad.
      */
     public String getContrasena()
     {
@@ -195,8 +197,7 @@ public class MisDatos
     /**
      * El metodo comprobarNombre sirve para ver si el nombre que ha introducido el usuario es valido.
      * Para ello, comprueba que no sea una cadena vacia.
-     * Si no, se comprobar√° si tiene 3 o m√°s car√°cteres, que son los m√≠nimos que puede tener el nombre.
-     * Si tiene el n√∫mero de car√°cteres que debe tener, se comprobar√° que todo sean letras.
+     * Si no, se comprobar· si tiene 3 o m·s car·cteres, que son los mÌnimos que puede tener el nombre.
      * @param nombre Cadena de texto que representa el nombre que ha introducido el usuario.
      * @return true si es un nombre valido y false si no se trata de uno valido.
      */
@@ -209,14 +210,14 @@ public class MisDatos
         }
         else if(nombre.length() < 3)
         {
-            System.out.println("Debe tener m√°s de 3 car√°cteres");
+            System.out.println("Debe tener mas de 3 caracteres");
             return false;
         }
         
         for(int i = 0; i < nombre.length(); i++)
             if(!Character.isLetter(nombre.charAt(i)))
             {
-                System.out.println("Un nombre no tiene caracteres que no sean letras");
+                System.out.println("Caracter no comtemplado");
                 return false;
             }
         
@@ -226,8 +227,7 @@ public class MisDatos
     /**
      * El metodo comprobarPrimerApellido sirve para ver si el primer apellido que ha introducido el usuario es valido.
      * Para ello, comprueba que no sea una cadena vacia.
-     * Si no, se comprobar√° si tiene 2 o m√°s car√°cteres, que son los m√≠nimos que puede tener el primero apellido.
-     * Si tiene el n√∫mero de car√°cteres que debe tener, se comprobar√° que todo sean letras.
+     * Si no, se comprobar· si tiene 2 o m·s car·cteres, que son los mÌnimos que puede tener el primero apellido.
      * @param primerApellido Cadena de texto que representa el primer apellido que ha introducido el usuario.
      * @return true si es un apellido valido y false si no se trata de uno valido.
      */
@@ -240,17 +240,16 @@ public class MisDatos
         }
         else if(primerApellido.length() < 2)
         {
-            System.out.println("Debe tener m√°s de 2 car√°cteres");
+            System.out.println("Debe tener m·s de 2 caracteres");
             return false;
         }
         
         for(int i = 0; i < primerApellido.length(); i++)
             if(!Character.isLetter(primerApellido.charAt(i)))
-                if(!Character.isLetter(nombre.charAt(i)))
-                {
-                    System.out.println("Un nombre no tiene caracteres que no sean letras");
-                    return false;
-                }
+            {
+                System.out.println("Caracter no comtemplado");
+                return false;
+            }
         
         return true;
     }
@@ -258,8 +257,7 @@ public class MisDatos
     /**
      * El metodo comprobarSegundoApellido sirve para ver si el segundo apellido que ha introducido el usuario es valido.
      * Para ello, comprueba que no sea una cadena vacia.
-     * Si no, se comprobar√° si tiene 2 o m√°s car√°cteres, que son los m√≠nimos que puede tener el segundo apellido.
-     * Si tiene el n√∫mero de car√°cteres que debe tener, se comprobar√° que todo sean letras.
+     * Si no, se comprobar· si tiene 2 o m·s car·cteres, que son los mÌnimos que puede tener el segundo apellido.
      * @param segundoApellido Cadena de texto que representa el segundo apellido que ha introducido el usuario.
      * @return true si es un apellido valido y false si no se trata de uno valido.
      */
@@ -272,14 +270,14 @@ public class MisDatos
         }
         else if(segundoApellido.length() < 2)
         {
-            System.out.println("Debe tener m√°s de 2 car√°cteres");
+            System.out.println("Debe tener m·s de 2 caracteres");
             return false;
         }
         
         for(int i = 0; i < segundoApellido.length(); i++)
-            if(!Character.isLetter(nombre.charAt(i)))
+            if(!Character.isLetter(segundoApellido.charAt(i)))
             {
-                System.out.println("Un nombre no tiene caracteres que no sean letras");
+                System.out.println("Caracter no comtemplado");
                 return false;
             }
         
@@ -288,9 +286,9 @@ public class MisDatos
     
     /**
      * El metodo comprobarDNI sirve para ver si el numero de DNI que ha introducido el usuario es valido y es posible que se trate de un DNI.
-     * Para ello, comprueba que tenga un minimo de 8 caracteres, que es la cantidad de numeros que tiene el documento de identidad espa√±ol.
-     * Si los tiene, pasar√° a comprobar si todos estos caracteres son digitos, no pudiendo tener alguna letra entre medias.
-     * En caso de que tenga 9 car√°cteres, se comprobar√° que se trata de la letra asociada al numero de DNI. 
+     * Para ello, comprueba que tenga un minimo de 8 car·cteres, que es la cantidad de numeros que tiene el documento de identidad espaÒol.
+     * <br>Si los tiene, pasar· a comprobar si todos estos car·cteres son digitos, no pudiendo tener alguna letra entre medias.
+     * <br>En caso de que tenga 9 car·cteres, se comprobar· que se trata de la letra asociada al numero de DNI. 
      * @param numeroDNI 8 digitos como cadena que ha tenido que introducir el usuario.
      * @return true si es un DNI valido y false si no se trata de uno valido.
      */
@@ -323,9 +321,9 @@ public class MisDatos
     }
     
     /**
-     * El metodo obtenerLetraDNI asignar√° una letra al DNI asociado a un usuario utilizando el algoritmo m√≥dulo 23.
-     * Para ello en funci√≥n del resto del n√∫mero del DNI entre 23, se le asignar√° la letra TRWAGMYFPDXBNJZSQVHLCKE correspondiente.
-     * @param DNI Numero asociado a la variable DNI del usuario sobre el que se est√© creando la contrase√±a.
+     * El metodo obtenerLetraDNI asignar· una letra al DNI asociado a un usuario utilizando el algoritmo mÛdulo 23.
+     * Para ello en funciÛn del resto del n˙mero del DNI entre 23, se le asignar· la letra TRWAGMYFPDXBNJZSQVHLCKE correspondiente.
+     * @param DNI N˙mero asociado a la variable DNI del usuario sobre el que se est· creando la contraseÒa.
      * @return La letra asociada a ese DNI.
      */
     private char obtenerLetraDNI(String DNI)
@@ -411,7 +409,7 @@ public class MisDatos
     /**
      * El metodo comprobarFecha sirve para ver si la fecha de nacimiento que ha introducido el usuario es valida.
      * Para ello, comprueba que se trata de una cadena introducida con el formato dd/MM/yyyy.
-     * En caso de que se encuentre en ese formato, comprobar√° que se trate de una fecha anterior a la de hoy.
+     * <br>En caso de que se encuentre en ese formato, comprobar· que se trate de una fecha anterior a la de hoy.
      * @param fecha Cadena que representa el dd/mm/aaaa en el que ha nacido el usuario.
      * @return true si es un fecha valida y false si no se trata de una valida.
      */
@@ -424,7 +422,6 @@ public class MisDatos
         try
         {
             fechaEnDate = sdf.parse(fecha);
-            
             
             if(sdf.format(fechaEnDate).equals(sdf.format(hoy)))
             {   
@@ -446,5 +443,18 @@ public class MisDatos
             System.out.println("La fecha no se ha introducido correctamente");
             return false;
         }
+    }
+    
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        return  "DNI = " + DNI + "\nNombre = "  + nombre + "\nPrimer apellidos = " 
+                + primerApellido + "\nPrimer apellidos = " + segundoApellido 
+                + "\nFecha de nacimiento = " + getFechaNacimiento()
+                + "\nNombre de Usuario = " + nombreUsuario 
+                + "\nContrasena = " + contrasena;
     }
 }

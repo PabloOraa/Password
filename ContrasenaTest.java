@@ -35,7 +35,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "abcddef";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -48,7 +48,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "abcdef";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -61,7 +61,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "AJDUWBEK";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -74,7 +74,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "ABCDE";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -87,7 +87,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "18374524";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -113,7 +113,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "!/·%$)·&";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -126,7 +126,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "/&(!=/";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -139,7 +139,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "abcdEFG";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -152,7 +152,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "abcDE";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -191,7 +191,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "as%\")ke&";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -204,7 +204,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "as(d&)";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -217,7 +217,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "ABWUE715";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -230,7 +230,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "AKW234";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -243,7 +243,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "ABWUE/!·";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -256,7 +256,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "AKW=/%";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -269,7 +269,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "7·1\"5&/";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -282,7 +282,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "2·$3%4";
-        Contrasena instance = new Contrasena(1);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -321,7 +321,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "AK45&\"7$";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -334,7 +334,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "AK45&\"";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -347,7 +347,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "ak45&\"7$";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -360,7 +360,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "a4&7$";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -373,7 +373,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "asB&Td$";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -386,7 +386,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "a&B$";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Segura");
@@ -400,7 +400,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "aK45&\"e";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getSeguridad().equals("Muy Segura");
@@ -413,7 +413,7 @@ public class ContrasenaTest
     {
         System.out.println("setSeguridad");
         String contra = "aK4&";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getSeguridad().equals("Muy Segura");
@@ -426,7 +426,7 @@ public class ContrasenaTest
     {
         System.out.println("setColor");
         String contra = "abcd2";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getColor().equals("\033[31m");
@@ -438,7 +438,7 @@ public class ContrasenaTest
     {
         System.out.println("setColor");
         String contra = "abcd2(S9";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(md);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getColor().equals("\033[31m");
@@ -450,7 +450,7 @@ public class ContrasenaTest
     {
         System.out.println("setColor");
         String contra = "abcd25%2";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getColor().equals("\033[33m");
@@ -462,7 +462,7 @@ public class ContrasenaTest
     {
         System.out.println("setColor");
         String contra = "abcd2(S9";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(1);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getColor().equals("\033[33m");
@@ -474,7 +474,7 @@ public class ContrasenaTest
     {
         System.out.println("setColor");
         String contra = "abcd2(S9";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = true;
         boolean result = instance.getColor().equals("\033[32m");
@@ -486,7 +486,7 @@ public class ContrasenaTest
     {
         System.out.println("setColor");
         String contra = "abcd2(9";
-        Contrasena instance = new Contrasena(0);
+        Contrasena instance = new Contrasena(2);
         instance.setSeguridad(contra);
         boolean expResult = false;
         boolean result = instance.getColor().equals("\033[32m");
