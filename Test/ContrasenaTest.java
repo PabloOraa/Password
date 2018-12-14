@@ -491,57 +491,5 @@ public class ContrasenaTest
         boolean expResult = false;
         boolean result = instance.getColor().equals("\033[32m");
         assertEquals(expResult,result);
-    }
-    
-    
-    
-    
-    
-    
-    
-    /**
-     * Test of metodoMecanico method, of class Contrasena.
-     */
-   /* @Test
-    public void testMetodoMecanico() {
-        System.out.println("metodoMecanico");
-        int numeroCaracteres = 0;
-        Contrasena instance = null;
-        String expResult = "";
-        String result = instance.metodoMecanico(numeroCaracteres);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-
-    /**
-     * Test of metodoLogaritmico method, of class Contrasena.
-     */
-    /*@Test
-    public void testMetodoLogaritmico() {
-        System.out.println("metodoLogaritmico");
-        int numeroCaracteres = 0;
-        Contrasena instance = null;
-        String expResult = "";
-        String result = instance.metodoLogaritmico(numeroCaracteres);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-
-    /**
-     * Test of tercerMetodo method, of class Contrasena.
-     */
-   /* @Test
-    public void testTercerMetodo() {
-        System.out.println("tercerMetodo");
-        MisDatos usuario = null;
-        int numeroCaracteres = 0;
-        Contrasena instance = null;
-        String expResult = "";
-        String result = instance.tercerMetodo(usuario, numeroCaracteres);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/    
+    }  
 }
